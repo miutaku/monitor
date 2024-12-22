@@ -1,0 +1,3 @@
+[submodule "monitor-server/snmp-exporter"]
+	path = monitor-server/snmp-exporter
+	url = https://github.com/prometheus/snmp_exporter.git
