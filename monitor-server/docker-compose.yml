@@ -34,10 +34,8 @@ services:
     container_name: blackbox-exporter
     command:
       - '--config.file=/etc/blackbox_exporter/blackbox-exporter.yml'
-    volumes:
-      - './blackbox-exporter:/etc/blackbox_exporter'
     network_mode: host
     pid: host
     restart: unless-stopped
     volumes:
-      - './blackbox_exporter:/etc/blackbox_exporter'
+      - './blackbox-exporter:/etc/blackbox_exporter'
