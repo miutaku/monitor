@@ -1,5 +1,13 @@
 ---
 services:
+  pdc-agent:
+    image: grafana/pdc-agent:latest
+    container_name: pdc-agent
+    command: [
+      "-token", "__PDC_TOKEN__", 
+      "-cluster", "__PDC_CLUSTER__", 
+      "-gcloud-hosted-grafana-id", "__PDC_GCLOUD_HOSTED_GRAFANA_ID__"
+    ]
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -32,11 +40,4 @@ services:
     restart: unless-stopped
     volumes:
       - './blackbox-exporter:/etc/blackbox_exporter'
-  pdc-agent:
-    image: grafana/pdc-agent:latest
-    container_name: pdc-agent
-    command: [
-      "-token", "__PDC_TOKEN__", 
-      "-cluster", "__PDC_CLUSTER__", 
-      "-gcloud-hosted-grafana-id", "__PDC_GCLOUD_HOSTED_GRAFANA_ID__"
-    ]
+
