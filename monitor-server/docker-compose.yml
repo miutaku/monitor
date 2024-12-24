@@ -22,10 +22,6 @@ services:
   snmp-exporter:
     image: prom/snmp-exporter:latest
     container_name: snmp-exporter
-    command:
-      - '--config.file=/etc/snmp_exporter/snmp.yml'
-    volumes:
-      - './snmp-exporter:/etc/snmp_exporter'
 #    network_mode: host
     pid: host
     restart: unless-stopped
