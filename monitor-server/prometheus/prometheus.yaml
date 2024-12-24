@@ -13,7 +13,11 @@ scrape_configs:
   - job_name: 'node_exporter'
     metrics_path: /metrics
     static_configs:
-      - targets: ['node-exporter:9100']
+      - targets:
+        - 'node-exporter:9100'
+        - 'epgstation-ubuntu-24-04-docker-oci-arm64:9100' # epgstation
+        - '192.168.0.122:9100' # docker-server (minipc)
+        - '192.168.0.125:9100' # Mirakurun
 
   - job_name: 'snmp_if_mib'
     static_configs:
