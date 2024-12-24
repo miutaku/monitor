@@ -14,7 +14,7 @@ services:
     container_name: node-exporter
     command:
       - '--path.rootfs=/host'
-    network_mode: host
+#    network_mode: host
     pid: host
     restart: unless-stopped
     volumes:
@@ -26,7 +26,7 @@ services:
       - '--config.file=/etc/snmp_exporter/snmp.yml'
     volumes:
       - './snmp-exporter:/etc/snmp_exporter'
-    network_mode: host
+#    network_mode: host
     pid: host
     restart: unless-stopped
   blackbox-exporter:
@@ -34,7 +34,7 @@ services:
     container_name: blackbox-exporter
     command:
       - '--config.file=/etc/blackbox_exporter/blackbox-exporter.yml'
-    network_mode: host
+#    network_mode: host
     pid: host
     restart: unless-stopped
     volumes:
