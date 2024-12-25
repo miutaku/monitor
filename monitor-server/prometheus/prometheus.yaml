@@ -83,6 +83,19 @@ scrape_configs:
       - target_label: __address__
         replacement: blackbox-exporter:9115
 
+  - job_name: 'pve'
+    static_configs:
+      - targets:
+        - 192.168.0.117  # miniPC
+    metrics_path: /pve
+    params:
+      module: [default]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+
 # myhome
   - job_name: 'speedtest_exporter_myhome'
     metrics_path: /metrics
