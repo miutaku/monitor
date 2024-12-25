@@ -40,4 +40,9 @@ services:
     restart: unless-stopped
     volumes:
       - './blackbox-exporter:/etc/blackbox_exporter'
-
+  pve-exporter:
+    image: prompve/prometheus-pve-exporter:latest
+    container_name: pve-exporter
+    volumes:
+      - ./proxmox-ve-exporter/pve.yml:/etc/prometheus/pve.yml
+    restart: unless-stopped
