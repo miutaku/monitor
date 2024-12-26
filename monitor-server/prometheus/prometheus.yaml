@@ -86,7 +86,7 @@ scrape_configs:
   - job_name: 'pve'
     static_configs:
       - targets:
-        - pve-exporter:9221  # miniPC
+        - pve-exporter:9221
     metrics_path: /pve
     params:
       module: [default]
