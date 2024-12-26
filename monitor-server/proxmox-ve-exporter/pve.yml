@@ -3,3 +3,4 @@ default:
   user: pve-exporter@pve
   token_name: "__PVE_TOKEN_NAME__"
   token_value: "__PVE_TOKEN__"
+  verify_ssl: false
