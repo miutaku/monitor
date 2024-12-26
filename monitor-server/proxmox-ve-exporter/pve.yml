@@ -1,5 +1,5 @@
 ---
 default:
-  user: prometheus@pve
+  user: pve-exporter@pve
   token_name: "__PVE_TOKEN_NAME__"
   token_value: "__PVE_TOKEN__"
