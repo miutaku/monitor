@@ -98,7 +98,7 @@ scrape_configs:
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: 127.0.0.1:9221  # PVE exporter.
+        replacement: pve-exporter:9221
 
 # myhome
   - job_name: 'speedtest_exporter_myhome'
