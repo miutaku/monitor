@@ -46,3 +46,5 @@ services:
     volumes:
       - ./proxmox-ve-exporter/pve.yml:/etc/prometheus/pve.yml
     restart: unless-stopped
+    ports:
+      - 127.0.0.1:9221:9221
