@@ -46,9 +46,3 @@ services:
     volumes:
       - ./proxmox-ve-exporter/pve.yml:/etc/prometheus/pve.yml
     restart: unless-stopped
-  pve-cloudflared:
-    image: cloudflare/cloudflared
-    command: tunnel run
-    environment: 
-      - TUNNEL_TOKEN=__CLOUDFLARE_TUNNEL_TOKEN_PVE__
-    restart: always
